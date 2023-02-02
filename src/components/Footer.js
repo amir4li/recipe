@@ -15,7 +15,7 @@ function Footer() {
     dispatch(
         setLogout()
     );           
-    navigate("/");
+    navigate("/recipe/");
   };
 
   return (
