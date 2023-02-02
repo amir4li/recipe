@@ -48,7 +48,7 @@ function RecipeMenu() {
                 pb={6}
             >
             {
-            recipes && recipes.map((item, index)=> (
+            recipes ? recipes.map((item, index)=> (
                 <Grid item
                 xs={5}
                 md={3}
@@ -56,7 +56,14 @@ function RecipeMenu() {
                 >
                 <MenuCard foodItem={item} menu={menu} />
                 </Grid>
-            ))}
+            )) :
+                <Typography
+                    variant="h6"
+                    mt={5}
+                >
+                Sorry ! No Data To Show...
+                </Typography>
+            }
             </Grid>
             </Stack>
         </Stack>
