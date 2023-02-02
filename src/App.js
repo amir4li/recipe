@@ -22,7 +22,7 @@ function App() {
       <div className="app">
       <Header />
       <Routes>
-        <Route path="/" element={ <HomePage /> } />
+        <Route path="/recipe/" element={ <HomePage /> } />
         <Route path="/recipes/:menu" element= { <RecipeMenu /> } />
         <Route path="/recipes/:menu/:recipeId" element= { <Recipe /> } />
         <Route path="/my-recipes" element={ <MyRecipes /> }/>

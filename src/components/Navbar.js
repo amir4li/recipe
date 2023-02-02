@@ -24,7 +24,7 @@ function Navbar() {
                     color: "#000",
                     cursor: 'pointer',
                 }}
-                onClick={()=> navigate("/")}
+                onClick={()=> navigate("/recipe/")}
             >
                 Home
             </Typography>

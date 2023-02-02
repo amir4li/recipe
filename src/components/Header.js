@@ -31,7 +31,7 @@ function Header() {
                     color: "limegreen",
                     cursor: 'pointer',
                 }}
-                onClick={()=> navigate("/")}
+                onClick={()=> navigate("/recipe/")}
             >
                 Recipe
             </Typography>
