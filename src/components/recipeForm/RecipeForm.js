@@ -30,7 +30,7 @@ function RecipeForm() {
 
         // Sending data to backend 
         try {
-            const res = await axios.post("http://localhost:5000/api/v1/recipes", values,
+            const res = await axios.post("https://recipe-backend-api.onrender.com/api/v1/recipes", values,
             { headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json"} });
 
             onSubmitProps.resetForm();           

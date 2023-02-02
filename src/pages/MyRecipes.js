@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Stack, Typography, Card, CardContent, CardActions, Button, IconButton, useMediaQuery } from '@mui/material'
 import { Edit, Delete, Add } from '@mui/icons-material';
 import DeleteDialog from '../components/DeleteDialog';
+import { maxWidth } from '@mui/system';
 
 
 function MyRecipes() {
@@ -16,7 +17,7 @@ function MyRecipes() {
     const isNonMobile = useMediaQuery("(min-width:600px)");
 
     const fetchRecipes = async ()=> {
-        const response = await axios.get("http://localhost:5000/api/v1/recipes/user-recipes",
+        const response = await axios.get("https://recipe-backend-api.onrender.com/api/v1/recipes/user-recipes",
             { headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json"} });
         setRecipes(response.data.data)
     };
@@ -28,13 +29,14 @@ function MyRecipes() {
 
     return (
         <Stack
+            
             p={7} pt={4}
             mt={6}
             gap={3}
             alignItems="center"
             sx={{ background: "#eee" }}
         >
-        <Stack spacing={2}>
+        <Stack spacing={2} maxWidth= {isNonMobile ? "80%" : "100%"}>
         <Stack
             direction= {isNonMobile ? "row" : "column"}
             spacing={2}
@@ -61,6 +63,7 @@ function MyRecipes() {
         <Stack alignItems="center">
             {
                 recipes && recipes.map((recipe)=> (
+                    <Stack width="100%">
                     <Card key={uuidv4()}
                     sx={{
                         cursor: "pointer",
@@ -80,6 +83,7 @@ function MyRecipes() {
                     <DeleteDialog recipeId={recipe._id} />
                     </CardActions>
                     </Card>
+                    </Stack>
                 ))
             }
         </Stack>

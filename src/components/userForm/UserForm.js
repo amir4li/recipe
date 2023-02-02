@@ -25,7 +25,7 @@ function UserForm({ pageType }) {
     const navigate = useNavigate();
 
     const signup = async (values, onSubmitProps)=> {
-        const savedUserResponse = await fetch( "http://localhost:5000/api/v1/auth/signup", {
+        const savedUserResponse = await fetch( "https://recipe-backend-api.onrender.com/api/v1/auth/signup", {
                 mode: 'cors',
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -50,7 +50,7 @@ function UserForm({ pageType }) {
     };
 
     const login = async (values, onSubmitProps)=> {
-        const loggedInResponse = await fetch( "http://localhost:5000/api/v1/auth/login", {
+        const loggedInResponse = await fetch( "https://recipe-backend-api.onrender.com/api/v1/auth/login", {
                 mode: 'cors',
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

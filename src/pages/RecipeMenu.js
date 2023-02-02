@@ -13,7 +13,7 @@ function RecipeMenu() {
     const isNonMobile = useMediaQuery("(min-width:600px)");
 
     const fetchRecipes = async ()=> {
-        const response = await axios.get(`http://localhost:5000/api/v1/recipes?category=${menu}`);
+        const response = await axios.get(`https://recipe-backend-api.onrender.com/api/v1/recipes?category=${menu}`);
         setRecipes(response.data.data)
     };
 

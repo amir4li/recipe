@@ -1,13 +1,16 @@
-import React,{ useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { AppBar, Typography, Toolbar, Grid, Stack } from '@mui/material';
+import { AppBar, Typography, Toolbar, Stack, useMediaQuery } from '@mui/material';
+import Navbar from './Navbar';
 
 
 function Header() {
     const isAuth = Boolean(useSelector((state)=> state.auth.user && state.auth.user));
+    const userName = useSelector((state)=> state.auth.user && state.auth.user.name)
     const navigate = useNavigate();
     const currentPage = window.location.href;
+    const isNonMobile = useMediaQuery("(min-width:600px)");
 
     return (
       <AppBar sx={{ bgcolor: "#eeee", mb: "4rem" }}>
@@ -19,7 +22,8 @@ function Header() {
             alignItems="center"
             paddingX="2rem"
         >
-            <Stack>
+            <Stack direction="row" spacing={3} alignItems="flex-end">
+            
             <Typography 
                 variant="h4"
                 sx={{
@@ -31,6 +35,7 @@ function Header() {
             >
                 Recipe
             </Typography>
+            { isNonMobile && <Navbar />}
             </Stack>
 
             <Stack>
@@ -44,9 +49,9 @@ function Header() {
                 border: "1px solid limegreen",
                 paddingX: "1rem"
                 }}
-                onClick={()=> {navigate("/my-recipes")}}
+                onClick={()=> {navigate("/my-recipe")}}
             >
-                My Recipes
+            {isNonMobile ? userName : "My Recipe"}
             </Typography> :
             
             currentPage.includes("login") || currentPage.includes("signup") ? "" :

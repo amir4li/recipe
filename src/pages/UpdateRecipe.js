@@ -13,7 +13,7 @@ function UpdateRecipe() {
 
     
     const fetchRecipe = async ()=> {
-        const response = await axios.get(`http://localhost:5000/api/v1/recipes/${recipeId}`);
+        const response = await axios.get(`https://recipe-backend-api.onrender.com/api/v1/recipes/${recipeId}`);
         setRecipe(response.data.data)
     };
 
