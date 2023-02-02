@@ -44,7 +44,7 @@ function UserForm({ pageType }) {
                     token: savedUser.token
                 })
             );           
-            navigate("/");
+            navigate("/recipe/");
         }
         onSubmitProps.resetForm();
     };
@@ -67,7 +67,7 @@ function UserForm({ pageType }) {
                     token: loggedIn.token
                 })
             );
-            navigate("/");
+            navigate("/recipe/");
         };
         onSubmitProps.resetForm();
     };
