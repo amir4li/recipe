@@ -18,15 +18,18 @@ function RecipeForm() {
         // Image upload to cloudinary
         const { photo } = values;
         const formData = new FormData()
-        try {
-            formData.append("file", photo)
-            formData.append("upload_preset", "omd4wotw");
-            formData.append("cloud_name", "hln4lqhjx");
-            const res = await axios.post("https://api.cloudinary.com/v1_1/hln4lqhjx/image/upload", formData);
-            values.photo = res.data.url
-        } catch (err) {
-            console.log(err)
-        };
+        if (photo) {
+            try {
+                formData.append("file", photo)
+                formData.append("upload_preset", "omd4wotw");
+                formData.append("cloud_name", "hln4lqhjx");
+                const res = await axios.post("https://api.cloudinary.com/v1_1/hln4lqhjx/image/upload", formData);
+                values.photo = res.data.url
+            } catch (err) {
+                console.log(err)
+            };
+        }
+        
 
         // Sending data to backend 
         try {
