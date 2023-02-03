@@ -54,7 +54,7 @@ function RecipeMenu() {
                 md={3}
                 key={uuidv4()}
                 >
-                <MenuCard foodItem={item} menu={menu} />
+                <MenuCard foodItem={item} />
                 </Grid>
             )) :
                 <Typography

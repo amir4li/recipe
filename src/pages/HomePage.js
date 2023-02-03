@@ -1,6 +1,7 @@
 import React from 'react'
 import { Stack, Typography, useMediaQuery } from '@mui/material'
 import CategoryList from '../components/category/CategoryList'
+import SearchBar from '../components/SearchBar';
 
 function HomePage() {
   const isNonMobile = useMediaQuery("(min-width:600px)");
@@ -25,6 +26,7 @@ function HomePage() {
             >
               The Home Of Recipes
             </Typography>
+            <SearchBar />
             <CategoryList />
         </Stack>
     </Stack>

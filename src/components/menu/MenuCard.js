@@ -2,12 +2,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardMedia, CardContent, Typography, useMediaQuery } from '@mui/material';
 
-function MenuCard({ foodItem, menu }) {
+function MenuCard({ foodItem }) {
     const isNonMobile = Boolean(useMediaQuery("(min-width: 1000px)"));
     const navigate = useNavigate();
 
     const handleClick = ()=> {
-        navigate(`/recipes/${menu}/${foodItem._id}`)
+        navigate(`/recipes/${foodItem.category}/${foodItem._id}`)
     };
     return (
       <Card

@@ -1,6 +1,6 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import CategoryCard from "./CategoryCard";
 
 const categories = [
@@ -32,6 +32,17 @@ const categories = [
 
 function CategoryList() {
     return (
+      <>
+      <Typography
+        variant="h5"
+        textAlign="center"
+        marginRight="2rem"
+        marginY = "1rem"
+        fontFamily="cursive"
+        color="limegreen"
+      >
+        Food Categories
+      </Typography>
       <Grid container
           columns={10}
           spacing={2}
@@ -52,6 +63,7 @@ function CategoryList() {
               </Grid>
           ))}
       </Grid>
+      </>
     )
 }
 
