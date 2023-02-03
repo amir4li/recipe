@@ -49,7 +49,7 @@ function Header() {
                 border: "1px solid limegreen",
                 paddingX: "1rem"
                 }}
-                onClick={()=> {navigate("/my-recipe")}}
+                onClick={()=> {navigate("/my-recipes")}}
             >
             {isNonMobile ? userName : "My Recipe"}
             </Typography> :
